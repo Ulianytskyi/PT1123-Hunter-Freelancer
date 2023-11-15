@@ -1,0 +1,38 @@
+.hide {
+    display: none;
+}
+
+.main-menu {
+    display: flex;
+}
+
+.main-menu-item {
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.character-object {
+    position: relative;
+    width: 500px;
+    height: 400px;
+    background: bisque;
+}
+.shop-object {
+    position: relative;
+    width: 500px;
+    height: 400px;
+    background: blueviolet;
+}
+
+.exchange-object {
+    position: relative;
+    width: 500px;
+    height: 400px;
+    background: yellowgreen;
+}
+.workshop-object {
+    position: relative;
+    width: 500px;
+    height: 400px;
+    background: goldenrod;
+}
