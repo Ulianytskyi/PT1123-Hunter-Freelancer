@@ -22,12 +22,12 @@ function loadPanels() {
 
 loadPanels();
 
-export let namePanelOnStart = "Character";
+export let namePanelOnStart = "Exchange";
 
 function menuItemListener() {
   const menuItems = document.querySelectorAll(".main-menu .item");
   menuItems.forEach((menuItem) => {
-    // activePanelOnStart(menuItem, nsamePanelOnStart);
+    activePanelOnStart(menuItem, namePanelOnStart);
     menuItem.addEventListener("click", panelSwitcher);
   });
 }
