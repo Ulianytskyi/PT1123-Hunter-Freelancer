@@ -39,6 +39,7 @@ body {
     height: var(--panel-size);
     background: var(--bg-color);
 }
+
 .contract-container {
     position: absolute;
     height: var(--panel-size);
@@ -49,8 +50,10 @@ body {
     position: relative;
     padding: 5px 10px;
     margin: 15px 10px;
+    height: 20px;
     width: 550px;
     border: 1px solid black;
+    background: bisque;
 }
 
 .open {
@@ -71,7 +74,34 @@ body {
     margin: 4px 0 9px;
 }
 
+.contract-title {
+    height: 20px;
+    cursor: pointer;
+}
+
+.contract-title:hover {
+    background-color: rgba(0, 0, 255, 0.5);
+}
+
 .contract-card {
     background: bisque;
-    z-index: 100;
+}
+
+.contract-status {
+    color: green;
+}
+
+.taken-contracts {
+    color: blue;
+}
+
+.taken-contracts-panel {
+    border: 1px solid black;
+    height: 100px;
+    width: 100px;
+}
+
+.take-btn {
+    margin: 5px 0 0;
+    width: 120px;
 }
