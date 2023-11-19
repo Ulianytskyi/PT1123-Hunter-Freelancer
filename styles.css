@@ -1,5 +1,6 @@
 :root {
-    --bg-color: bisque;
+    /* --bg-color: bisque; */
+    --bg-color: white;
     --panel-size: 440px;
 }
 
@@ -46,24 +47,31 @@ body {
 
 .contract-block {
     position: relative;
-    padding-bottom: 10px;
+    padding: 5px 10px;
     margin: 15px 10px;
-    width: 580px;
-    border-bottom: 1px solid black;
+    width: 550px;
+    border: 1px solid black;
 }
 
-.contract-block:last-child {
-    border: none;
+.open {
+    height: 200px;
 }
 
 .cont-block-items {
     display: flex;
     flex-direction: row;
+    margin: 10px 0 5px;
 }
+
 .cont-block.item.title {
-    margin: 0 10px;
+    margin: 5px 10px 0;
 }
 
 .nal-style {
-    margin: 4px 0 5px;
+    margin: 4px 0 9px;
+}
+
+.contract-card {
+    background: bisque;
+    z-index: 100;
 }

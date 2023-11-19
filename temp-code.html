@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.container-style {
+			display: block;
+			width: 300px;
+			height: 20px;
+			background-color: grey;
+		}
+		.con-title {
+			width: 100%;
+			height: 20px;
+			background-color: bisque;
+		}
+		.con-content {
+			width: 100%;
+			height: 100px;
+			background-color: seagreen;
+		}
+		.hide {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="main-field"></div>
+	
+	<script>
+
+
+		const mainField = document.getElementById('main-field');
+		
+		for (let i = 0; i < 3; i++) {
+
+			const container = document.createElement('div');
+			container.className = 'container-style';
+
+			const conTitle = document.createElement('div');
+			conTitle.innerHTML = 'Title >';
+			conTitle.className = 'con-title';
+			conTitle.addEventListener('click', openClose);
+
+			const conContent = document.createElement('div');
+			conContent.innerHTML = 'Lorem ipsum</br>Lorem ipsum</br>Lorem ipsum</br>';
+			conContent.className = 'con-content hide';
+
+			container.appendChild(conTitle);
+			container.appendChild(conContent);
+			mainField.appendChild(container);
+
+		}
+		
+		let isOpen = null;
+
+		function openClose (event) {
+			console.clear();
+			document.querySelectorAll('.con-content').forEach((panel) => {
+				console.log('panel', panel);
+			});
+			
+
+			let contentPanel = event.target.parentElement.children[1];
+
+			if (isOpen != null && contentPanel.classList.contains('hide')) {
+
+				isOpen.parentElement.children[1].classList.add('hide');
+				isOpen.parentElement.style.height = 20 + 'px';
+				isOpen.innerHTML = 'Title >';
+				contentPanel.classList.remove('hide');
+				event.target.parentElement.style.height = 120 + 'px';
+				event.target.innerHTML = 'Title _';
+				isOpen = event.target;
+
+			} else if (!contentPanel.classList.contains('hide')) {
+				contentPanel.classList.add('hide');
+				event.target.parentElement.style.height = 20 + 'px';
+				event.target.innerHTML = 'Title >';
+				isOpen = null;	
+
+			} else {
+
+				contentPanel.classList.remove('hide');
+				event.target.parentElement.style.height = 120 + 'px';
+				event.target.innerHTML = 'Title _';
+				isOpen = event.target;
+			}
+		}
+
+		document.querySelectorAll('.con-content').forEach((panel) => {
+					console.log('panel', panel);
+		});
+
+	</script>
+	
+</body>
+</html>
